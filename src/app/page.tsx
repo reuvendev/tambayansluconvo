@@ -430,7 +430,7 @@ export default function ConversationCreatorPage() {
                 }}
                 rows={4}
                 placeholder="Type a message..."
-                className="mt-3 w-full resize-none rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-3 text-[14px] outline-none focus:border-emerald-500"
+                className="mt-3 w-full resize-none rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-3 text-base sm:text-base sm:text-sm outline-none focus:border-emerald-500"
               />
               <input ref={fileRef} type="file" accept="image/jpeg,image/png,image/webp" onChange={attachPhoto} className="hidden" />
               {attachedImage && (
@@ -457,19 +457,19 @@ export default function ConversationCreatorPage() {
                 <button type="button" onClick={() => setMobilePanel(null)} className="rounded-lg border border-neutral-200 p-2 lg:hidden" aria-label="Close appearance settings"><Icon name="x" /></button>
               </div>
               <label className="block text-[11px] font-semibold text-neutral-600" htmlFor="my-name">Your message name</label>
-              <input id="my-name" value={myName} maxLength={40} onChange={(event) => setMyName(event.target.value)} className="mt-1.5 mb-4 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-sm outline-none focus:border-emerald-500" placeholder="You" />
+              <input id="my-name" value={myName} maxLength={40} onChange={(event) => setMyName(event.target.value)} className="mt-1.5 mb-4 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-base sm:text-sm outline-none focus:border-emerald-500" placeholder="You" />
               <label className="block text-[11px] font-semibold text-neutral-600" htmlFor="peer-name">Chat header name / other person's name</label>
-              <input id="peer-name" value={peerName} maxLength={40} onChange={(event) => setPeerName(event.target.value)} className="mt-1.5 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-sm outline-none focus:border-emerald-500" placeholder="Anonymous Louisian" />
+              <input id="peer-name" value={peerName} maxLength={40} onChange={(event) => setPeerName(event.target.value)} className="mt-1.5 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-base sm:text-sm outline-none focus:border-emerald-500" placeholder="Anonymous Louisian" />
               <label className="mt-4 block text-[11px] font-semibold text-neutral-600" htmlFor="peer-school">School badge</label>
-              <select id="peer-school" value={peerSchool} onChange={(event) => setPeerSchool(event.target.value)} className="mt-1.5 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-sm outline-none focus:border-emerald-500">
+              <select id="peer-school" value={peerSchool} onChange={(event) => setPeerSchool(event.target.value)} className="mt-1.5 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-base sm:text-sm outline-none focus:border-emerald-500">
                 <option value="">No school shown</option>
                 {['SAMCIS', 'SEA', 'SOM', 'SONAHBS', 'STELA', 'SOL'].map((school) => <option key={school} value={school}>{school}</option>)}
               </select>
               <label className="mt-4 block text-[11px] font-semibold text-neutral-600" htmlFor="peer-streak">Chat partner streak</label>
-              <input id="peer-streak" type="number" min="0" max="9999" step="1" value={peerStreak} onChange={(event) => setPeerStreak(Math.min(9999, Math.max(0, Number.parseInt(event.target.value, 10) || 0)))} className="mt-1.5 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-sm outline-none focus:border-emerald-500" />
+              <input id="peer-streak" type="number" min="0" max="9999" step="1" value={peerStreak} onChange={(event) => setPeerStreak(Math.min(9999, Math.max(0, Number.parseInt(event.target.value, 10) || 0)))} className="mt-1.5 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-base sm:text-sm outline-none focus:border-emerald-500" />
               <p className="mt-1 text-[11px] text-neutral-500">Shows 🔥 and the streak count beside the school badge, like the real chat. Set 0 to hide.</p>
               <label className="mt-4 block text-[11px] font-semibold text-neutral-600" htmlFor="image-format">Image format</label>
-              <select id="image-format" value={format} onChange={(event) => setFormat(event.target.value as CanvasFormat)} className="mt-1.5 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-sm outline-none focus:border-emerald-500">
+              <select id="image-format" value={format} onChange={(event) => setFormat(event.target.value as CanvasFormat)} className="mt-1.5 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2.5 text-base sm:text-sm outline-none focus:border-emerald-500">
                 {(Object.keys(FORMAT_LABELS) as CanvasFormat[]).map((key) => <option key={key} value={key}>{FORMAT_LABELS[key]}</option>)}
               </select>
               <div className="mt-4 flex items-center justify-between gap-2 rounded-xl border border-neutral-200 px-3 py-3">
